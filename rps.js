@@ -3,6 +3,7 @@ let numOfOptions = 3;
 let numOfGames = 5;
 let options = ["rock", "paper", "scissors"];
 let capitalizedOptions = ["Rock", "Paper", "Scissors"];
+playGame();
 
 // Function Declerations
 // Randomly return either rock paper or scissors
@@ -81,6 +82,8 @@ function getPlayerSelection() {
 // Plays 5 rounds of rock, paper, scissors
 function playGame() {
     for (let i = 0; i < numOfGames; i++) {
-        getPlayerSelection();
+        let playerSelection = getPlayerSelection();
+        let computerSelection = getComputerChoice();
+        console.log(calcGameResult(playerSelection, computerSelection));
     }
 }
