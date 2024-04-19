@@ -18,9 +18,11 @@ function getComputerChoice() {
 function calcGameResult(playerSelection, computerSelection) {
     // Find the array position for computerSelection, then store that in a variable (That variable will be computerSelection)
     // Find the array position for playerSelection
+
+    let playerSelectionNum = 0;
     for (let i = 0; i < numOfOptions; i++) {
         if (playerSelection === options[i]) {
-            let playerSelectionNum = i;
+            playerSelectionNum = i;
         }
     }
     // Initiate gameStatus variable and winner/loserNum variables
