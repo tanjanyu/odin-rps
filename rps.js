@@ -44,9 +44,9 @@ function calcGameResult(playerSelection, computerSelection) {
 
     // Return statement
     if (gameStatus !== "drew") {
-        return `You ${gameStatus}! ${capitalizedOptions[winnerNum]} beats ${option[loserNum]}`;
+        return `You ${gameStatus}! ${capitalizedOptions[winnerNum]} beats ${options[loserNum]}`;
     } else {
-        return `You drew! You both picked ${option[computerSelection]}`;
+        return `You drew! You both picked ${options[computerSelection]}`;
     }
 
 }
