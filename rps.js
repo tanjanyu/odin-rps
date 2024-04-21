@@ -34,12 +34,14 @@ function calcGameResult(playerSelection, computerSelection) {
             gameStatus = "lose";
             winnerNum = computerSelection;
             loserNum = playerSelectionNum;
+            break;
 
 
         case winner(computerSelection):
             gameStatus = "win";
             loserNum = computerSelection;
             winnerNum = playerSelectionNum;
+            break;
     }
 
     // Return statement
@@ -57,14 +59,14 @@ function loser(input) {
     if (potentialLoserValue >= 0) {
         return potentialLoserValue;
     } else {
-        return numOfOptions;
+        return (numOfOptions - 1);
     }
 }
 
 // This function should find the winning value in the array
 function winner(input) {
     let potentialWinnerValue = input + 1;
-    if (potentialWinnerValue <= numOfOptions) {
+    if (potentialWinnerValue <= (numOfOptions - 1)) {
         return potentialWinnerValue;
     } else {
         return 0;
@@ -83,9 +85,10 @@ function getPlayerSelection() {
 
 // Plays 5 rounds of rock, paper, scissors
 function playGame() {
+    let playerSelection, computerSelection;
     for (let i = 0; i < numOfGames; i++) {
-        let playerSelection = getPlayerSelection();
-        let computerSelection = getComputerChoice();
+        playerSelection = getPlayerSelection();
+        computerSelection = getComputerChoice();
         console.log(calcGameResult(playerSelection, computerSelection));
     }
 }
